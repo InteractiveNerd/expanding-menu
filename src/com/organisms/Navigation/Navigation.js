@@ -9,7 +9,9 @@ const Navigation = () => {
           <img alt="icon" id="xd-logo" src="./icons/XD-Logo.svg" />
         </div>
         <div className="nav-search">
-          <input type="text" name="search" id="search" />
+          <form>
+            <input type="text" name="search" id="search" />
+          </form>
         </div>
       </div>
       <div className="nav-list">

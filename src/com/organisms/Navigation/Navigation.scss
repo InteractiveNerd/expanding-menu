@@ -17,6 +17,17 @@
 
   &-search {
     flex-grow: 3;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    input {
+      background-color: #1f1f1f;
+      margin: 0 26px 0 1px;
+      height: 42px;
+      border-radius: 21px;
+      border: 1px solid #2b2b2b;
+    }
   }
 
   &-list {
@@ -34,28 +45,16 @@
       justify-content: center;
       align-items: center;
       flex-basis: 108px;
-
-      border: 1px solid pink;
     }
 
     &__text {
       flex-grow: 3;
       display: flex;
       align-items: center;
-
-      justify-content: center;
-      border: 1px solid pink;
-      // display: none;
+      margin: 0 0 0 16px;
+      font-family: monospace;
+      font-size: 27px;
+      color: white;
     }
-  }
-  input {
-    display: none;
-  }
-  #xd-logo {
-    // margin-top: 35px;
-    // margin-bottom: 68px;
-  }
-  img {
-    // margin-bottom: 73px;
   }
 }
