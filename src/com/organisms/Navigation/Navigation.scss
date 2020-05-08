@@ -3,23 +3,59 @@
   height: 730px;
   background-color: #222222;
   border-radius: 19px;
+  display: grid;
+  grid-template-rows: 124px 1fr;
+  row-gap: 21px;
 
+  &.open {
+    width: 430px;
+  }
+
+  &-header {
+    display: flex;
+  }
+
+  &-search {
+    flex-grow: 3;
+  }
+
+  &-list {
+    display: grid;
+    grid-template-rows: repeat(5, 79px);
+    row-gap: 44px;
+  }
+
+  &-item {
+    display: flex;
+
+    &__icon,
+    &__icon-header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-basis: 108px;
+
+      border: 1px solid pink;
+    }
+
+    &__text {
+      flex-grow: 3;
+      display: flex;
+      align-items: center;
+
+      justify-content: center;
+      border: 1px solid pink;
+      // display: none;
+    }
+  }
   input {
     display: none;
   }
   #xd-logo {
-    margin-top: 35px;
-    margin-bottom: 68px;
+    // margin-top: 35px;
+    // margin-bottom: 68px;
   }
   img {
-    margin-bottom: 73px;
+    // margin-bottom: 73px;
   }
-}
-
-.open {
-  width: 430px;
-}
-
-.nav-item__text {
-  display: none;
 }
