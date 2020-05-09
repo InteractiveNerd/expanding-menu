@@ -1,8 +1,8 @@
-import React { useStae } from 'react';
+import React, { useStae } from 'react';
 import './Navigation.scss';
 
 const Navigation = () => {
-  const [count ,setCount] = useState(1);
+  const [count, setCount] = useState(1);
   return (
     <div className="nav open">
       <div className="nav-header">
@@ -11,7 +11,7 @@ const Navigation = () => {
         </div>
         <div className="nav-search">
           <form>
-            <input type="text" name="search" id="search" value={count}/>
+            <input type="text" name="search" id="search" value={count} />
           </form>
         </div>
       </div>
