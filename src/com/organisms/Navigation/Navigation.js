@@ -5,6 +5,7 @@ import './Navigation.scss';
 const Navigation = () => {
   const [navSwitch, setNavSwitch] = useState(false);
   let navMenu = useRef(null);
+  let navTxt = useRef(null);
   const handleClick = (e) => {
     e.preventDefault();
     return navSwitch ? setNavSwitch(false) : setNavSwitch(true);
@@ -12,9 +13,11 @@ const Navigation = () => {
   useEffect(() => {
     console.log(navSwitch);
     if (navSwitch) {
-      TweenMax.to(navMenu, 2, { width: 430 });
+      TweenMax.to(navMenu, 1, { width: 430, ease: Power3 });
+      TweenMax.to(navTxt, 1, { left: 0, opacity: 1, ease: Power3 });
     } else {
-      TweenMax.to(navMenu, 2, { width: 108 });
+      TweenMax.to(navMenu, 1, { width: 108, ease: Power3 });
+      TweenMax.to(navTxt, 1, { left: 400, opacity: 0, ease: Power3 });
     }
   });
   return (
@@ -37,10 +40,19 @@ const Navigation = () => {
       <ul className="nav-list">
         <li className="nav-item">
           <a href="/" onClick={handleClick}>
-            <div className="nav-item__icon">
-              <img alt="icon" src="./icons/home-water.svg" />
+            <div className="nav-item__btn">
+              <div className="nav-item__icon">
+                <img alt="icon" src="./icons/home-water.svg" />
+              </div>
+              <div
+                className="nav-item__text"
+                ref={(el) => {
+                  navTxt = el;
+                }}
+              >
+                Home
+              </div>
             </div>
-            <div className="nav-item__text">Home</div>
           </a>
         </li>
         <li className="nav-item">
