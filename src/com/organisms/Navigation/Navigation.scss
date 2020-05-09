@@ -6,6 +6,8 @@
   display: grid;
   grid-template-rows: 124px 1fr;
   row-gap: 21px;
+  position: absolute;
+  z-index: 10;
 
   &.open {
     width: 430px;
@@ -27,6 +29,9 @@
       height: 42px;
       border-radius: 21px;
       border: 1px solid #2b2b2b;
+      color: white;
+      font-size: 16px;
+      padding-left: 21px;
     }
   }
 
@@ -52,7 +57,7 @@
       display: flex;
       align-items: center;
       margin: 0 0 0 16px;
-      font-family: monospace;
+      font-family: 'Montserrat', sans-serif;
       font-size: 27px;
       color: white;
     }
