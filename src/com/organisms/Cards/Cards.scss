@@ -21,6 +21,8 @@
         background-color: #1e1e1e;
         margin: 30px 0 17px 0;
         border-radius: 25px;
+        color: white;
+        font-size: 18px;
       }
       &-caption {
         width: 100%;
@@ -28,6 +30,9 @@
         background-color: #1e1e1e;
         margin-bottom: 11px;
         border-radius: 25px;
+        font-size: 10px;
+
+        color: white;
       }
       &-btns {
         display: flex;
