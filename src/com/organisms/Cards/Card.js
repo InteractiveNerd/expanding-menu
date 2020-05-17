@@ -1,24 +1,16 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { fetchPosts } from "../../../actions";
 
-const Card = () => {
-  const [posts, setPosts] = useState([]);
+class Card extends Component {
+  componentDidMount() {
+    this.props.fetchPosts();
+  }
 
-  useEffect(() => {
-    axios
-      .get("https://jsonplaceholder.typicode.com/posts")
-      .then((res) => {
-        console.log(res);
-        setPosts(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
-  return (
-    <div className="card">
-      {posts.map((post) => (
-        <div className="card__container">
+  renderPost() {
+    return this.props.posts.map((post) => {
+      return (
+        <div className="card__container" key={post.id}>
           <div className="card__container-hero">{post.body}</div>
           <div className="card__container-caption">{post.title}</div>
           <div className="card__container-btns">
@@ -26,12 +18,20 @@ const Card = () => {
             <button id="right"></button>
           </div>
         </div>
-      ))}
-    </div>
-  );
+      );
+    });
+  }
+
+  render() {
+    return <div className="card">{this.renderPost()}</div>;
+  }
+}
+
+const mapStateToProps = (state) => {
+  return { posts: state.posts };
 };
 
-export default Card;
+export default connect(mapStateToProps, { fetchPosts })(Card);
 
 // const [data, setData] = useState({ info: [] });
 
@@ -43,3 +43,15 @@ export default Card;
 //   }
 //   fetchData();
 // }, [setData(result.data)]);
+
+// useEffect(() => {
+//   axios
+//     .get("https://jsonplaceholder.typicode.com/posts")
+//     .then((res) => {
+//       console.log(res);
+//       setPosts(res.data);
+//     })
+//     .catch((err) => {
+//       console.log(err);
+//     });
+// }, []);
