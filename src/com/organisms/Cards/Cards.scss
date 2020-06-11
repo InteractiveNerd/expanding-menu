@@ -7,12 +7,15 @@
   border: 1px solid #707070;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   overflow-y: hidden;
   position: relative;
   z-index: 5;
   margin: 19px 0 0 108px;
 
   .card {
+    margin: 0 25px;
     &__container {
       display: flex;
       flex-direction: column;
@@ -25,6 +28,9 @@
         border-radius: 25px;
         color: white;
         font-size: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
       &-caption {
         width: 100%;
