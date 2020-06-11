@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { fetchPosts } from "../../../actions";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { fetchPosts } from '../../actions';
 
 class Card extends Component {
   componentDidMount() {
