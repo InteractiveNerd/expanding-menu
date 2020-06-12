@@ -1,21 +1,23 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { fetchPosts } from '../../actions';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { fetchPosts } from "../../actions";
 
 class Card extends Component {
   componentDidMount() {
     this.props.fetchPosts();
   }
 
-  renderPost() {
+  renderPost(props) {
+    let pageTitle = this.props.pageTitle;
+
     return this.props.posts.map((post) => {
       return (
         <div className="card__container" key={post.id}>
-          <div className="card__container-hero">{post.body}</div>
+          <div className="card__container-hero">{pageTitle}</div>
           <div className="card__container-caption">{post.title}</div>
           <div className="card__container-btns">
-            <button id="left"></button>
-            <button id="right"></button>
+            <button id="left" />
+            <button id="right" />
           </div>
         </div>
       );
