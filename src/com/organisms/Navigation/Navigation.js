@@ -1,6 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { TweenMax, Power3 } from 'gsap';
-import './Navigation.scss';
+import React, { useState, useEffect, useRef } from "react";
+import { TweenMax, Power3 } from "gsap";
+import "./Navigation.scss";
+
+import { Link } from "react-router-dom";
 
 const Navigation = () => {
   const [navSwitch, setNavSwitch] = useState(false);
@@ -21,18 +23,58 @@ const Navigation = () => {
       TweenMax.to(navMenu, 2, { width: 430, ease: Power3 });
       TweenMax.to(navSearch, 0.5, { left: 0, opacity: 1, ease: Power3 });
       TweenMax.to(navTxt1, 0.8, { left: 0, opacity: 1, ease: Power3 });
-      TweenMax.to(navTxt2, 0.8, { left: 0, opacity: 1, ease: Power3, delay: 0.2 });
-      TweenMax.to(navTxt3, 0.8, { left: 0, opacity: 1, ease: Power3, delay: 0.4 });
-      TweenMax.to(navTxt4, 0.8, { left: 0, opacity: 1, ease: Power3, delay: 0.6 });
-      TweenMax.to(navTxt5, 0.8, { left: 0, opacity: 1, ease: Power3, delay: 0.8 });
+      TweenMax.to(navTxt2, 0.8, {
+        left: 0,
+        opacity: 1,
+        ease: Power3,
+        delay: 0.2,
+      });
+      TweenMax.to(navTxt3, 0.8, {
+        left: 0,
+        opacity: 1,
+        ease: Power3,
+        delay: 0.4,
+      });
+      TweenMax.to(navTxt4, 0.8, {
+        left: 0,
+        opacity: 1,
+        ease: Power3,
+        delay: 0.6,
+      });
+      TweenMax.to(navTxt5, 0.8, {
+        left: 0,
+        opacity: 1,
+        ease: Power3,
+        delay: 0.8,
+      });
     } else {
       TweenMax.to(navMenu, 2, { width: 108, ease: Power3 });
       TweenMax.to(navSearch, 0.5, { left: 400, opacity: 0, ease: Power3 });
       TweenMax.to(navTxt1, 0.8, { left: 400, opacity: 0, ease: Power3 });
-      TweenMax.to(navTxt2, 0.8, { left: 400, opacity: 0, ease: Power3, delay: 0.2 });
-      TweenMax.to(navTxt3, 0.8, { left: 400, opacity: 0, ease: Power3, delay: 0.4 });
-      TweenMax.to(navTxt4, 0.8, { left: 400, opacity: 0, ease: Power3, delay: 0.6 });
-      TweenMax.to(navTxt5, 0.8, { left: 400, opacity: 0, ease: Power3, delay: 0.8 });
+      TweenMax.to(navTxt2, 0.8, {
+        left: 400,
+        opacity: 0,
+        ease: Power3,
+        delay: 0.2,
+      });
+      TweenMax.to(navTxt3, 0.8, {
+        left: 400,
+        opacity: 0,
+        ease: Power3,
+        delay: 0.4,
+      });
+      TweenMax.to(navTxt4, 0.8, {
+        left: 400,
+        opacity: 0,
+        ease: Power3,
+        delay: 0.6,
+      });
+      TweenMax.to(navTxt5, 0.8, {
+        left: 400,
+        opacity: 0,
+        ease: Power3,
+        delay: 0.8,
+      });
     }
   });
   return (
@@ -70,7 +112,9 @@ const Navigation = () => {
                   navTxt1 = el;
                 }}
               >
-                Home
+                <Link to="/" className="nav-item__text--link">
+                  Home
+                </Link>
               </div>
             </div>
           </a>
@@ -85,7 +129,9 @@ const Navigation = () => {
               navTxt2 = el;
             }}
           >
-            Notifications
+            <Link to="/notifications" className="nav-item__text--link">
+              Notifications
+            </Link>
           </div>
         </li>
         <li className="nav-item">
@@ -98,7 +144,10 @@ const Navigation = () => {
               navTxt3 = el;
             }}
           >
-            Videos
+            <Link to="/videos" className="nav-item__text--link">
+              {" "}
+              Videos{" "}
+            </Link>
           </div>
         </li>
         <li className="nav-item">
@@ -111,7 +160,10 @@ const Navigation = () => {
               navTxt4 = el;
             }}
           >
-            Analytics
+            <Link to="/analytics" className="nav-item__text--link">
+              {" "}
+              Analytics{" "}
+            </Link>
           </div>
         </li>
         <li className="nav-item">
@@ -124,7 +176,10 @@ const Navigation = () => {
               navTxt5 = el;
             }}
           >
-            Settings
+            <Link to="/settings" className="nav-item__text--link">
+              {" "}
+              Settings{" "}
+            </Link>
           </div>
         </li>
       </ul>
