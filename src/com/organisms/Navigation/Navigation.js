@@ -112,7 +112,9 @@ const Navigation = () => {
                   navTxt1 = el;
                 }}
               >
-                <Link to="/">Home</Link>
+                <Link to="/" className="nav-item__text--link">
+                  Home
+                </Link>
               </div>
             </div>
           </a>
@@ -127,7 +129,9 @@ const Navigation = () => {
               navTxt2 = el;
             }}
           >
-            <Link to="/notifications">Notifications</Link>
+            <Link to="/notifications" className="nav-item__text--link">
+              Notifications
+            </Link>
           </div>
         </li>
         <li className="nav-item">
@@ -140,7 +144,10 @@ const Navigation = () => {
               navTxt3 = el;
             }}
           >
-            <Link to="/videos"> Videos </Link>
+            <Link to="/videos" className="nav-item__text--link">
+              {" "}
+              Videos{" "}
+            </Link>
           </div>
         </li>
         <li className="nav-item">
@@ -153,7 +160,10 @@ const Navigation = () => {
               navTxt4 = el;
             }}
           >
-            <Link to="/analytics"> Analytics </Link>
+            <Link to="/analytics" className="nav-item__text--link">
+              {" "}
+              Analytics{" "}
+            </Link>
           </div>
         </li>
         <li className="nav-item">
@@ -166,7 +176,10 @@ const Navigation = () => {
               navTxt5 = el;
             }}
           >
-            <Link to="/settings"> Settings </Link>
+            <Link to="/settings" className="nav-item__text--link">
+              {" "}
+              Settings{" "}
+            </Link>
           </div>
         </li>
       </ul>

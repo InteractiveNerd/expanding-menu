@@ -70,10 +70,17 @@
       display: flex;
       align-items: center;
       margin: 0 0 0 16px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: "Montserrat", sans-serif;
       font-size: 27px;
       color: white;
       position: relative;
+      &--link {
+        color: white;
+        transition: 0.4s ease-in-out;
+        &:hover {
+          color: #f21bbe;
+        }
+      }
     }
   }
 }
